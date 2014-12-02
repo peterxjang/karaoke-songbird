@@ -1,1 +1,12 @@
-Hello
+<ul>
+<% @user_songs.each do |user_song| %>
+	<li>
+		<%= user_song.user.name %> is singing...
+		<ul>
+			<li>Title: <%= user_song.song.title %></li>
+			<li>Artist: <%= user_song.song.artist %></li>
+			<li>Duration: <%= user_song.song.time %></li>
+		</ul>
+	</li>
+<% end %>
+</ul>
