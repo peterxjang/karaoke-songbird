@@ -1,0 +1,10 @@
+<%= form_tag login_path, class: "form-horizontal", role: "form" do %>
+<ul>
+	<li><%= label_tag :email, "Email" %></li>
+	<li><%= email_field_tag :email %></li>
+	<li><%= label_tag :password, "Password" %></li>
+	<li><%= password_field_tag :password %></li>
+	<li><%= submit_tag "Login", class: "form-button btn" %></li>
+</ul>
+<% end %>
+<%= link_to "Join Us", new_user_path, class: "form-button btn" %>
