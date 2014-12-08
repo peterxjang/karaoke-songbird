@@ -12,6 +12,6 @@
  *
  *= require_self
  *= require_tree .
- *= require jquery.mobile
+ *= require jquery.mobile-1.4.5
  *= require main
  */
