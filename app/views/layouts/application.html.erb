@@ -2,13 +2,26 @@
 <html>
 <head>
   <title>KaraokeSongbird</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div data-role="page">
+	<div data-role="header">
+		<h1>Karaoke Songbird</h1>
+	</div>
+
+	<div data-role="content">
+		<%= yield %>
+	</div>
+
+	<div data-role="footer">
+		<h4>Footer</h4>
+	</div>
+</div>
 
 </body>
 </html>
