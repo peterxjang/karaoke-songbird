@@ -2,13 +2,51 @@
 <html>
 <head>
   <title>KaraokeSongbird</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div data-role="page">
+
+	<div data-role="header" data-theme="b">
+		<a href="#main-menu" id="header-menu" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-grid">Menu</a>
+		<h1>Karaoke Songbird</h1>
+		<a href="#search-menu" id="header-search" class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-search">Search</a>
+	</div>
+
+	<div data-role="content" data-theme="a">
+		<%= yield %>
+	</div>
+
+	<div data-role="footer" data-theme="b">
+		<h4>Footer</h4>
+	</div>
+
+	<div id="main-menu" data-role="panel" data-display="overlay" data-theme="b">
+	  <ul data-role="listview">
+		  <li><input type="search" name="search-1" id="search-1" value="" data-theme="a"></li>
+	    <li><a href="#">Sing</a></li>
+	    <li><a href="#">Songs by Title</a></li>
+	    <li><a href="#">Songs by Artist</a></li>
+	    <li><a href="#">Songs by Genre</a></li>
+	    <li><a href="#">Rate Performers</a></li>
+	    <li><a href="#">My Profile</a></li>
+	    <li><a href="#">Settings</a></li>
+	    <li><a href="#">Help</a></li>
+	  </ul>
+	</div>
+
+	<div id="search-menu" data-role="panel" data-display="overlay" data-position="right" data-theme="b">
+		<form class="ui-filterable">
+			<input id="autocomplete-input" data-type="search" data-theme="a" placeholder="Find a song...">
+		</form>
+		<ul id="autocomplete" data-role="listview" data-inset="true" data-filter="true" data-input="#autocomplete-input"></ul>
+	</div>
+
+</div>
 
 </body>
 </html>
