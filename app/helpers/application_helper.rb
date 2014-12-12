@@ -6,4 +6,10 @@ module ApplicationHelper
 	def current_playlist
 		Playlist.last
 	end
+
+	def admin?
+		if current_user
+			current_user.admin
+		end
+	end
 end
