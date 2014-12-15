@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   # root to: "sessions#new"
-  root to: "playlists#index"
+  root to: "playlists#show"
   post '/login', to: "sessions#create"
   get '/logout', to: "sessions#destroy"
-  
+
   resources :users, except: [:destroy]
 
   get '/playlists', to: "playlists#index"
