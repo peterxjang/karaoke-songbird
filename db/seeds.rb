@@ -12,10 +12,15 @@ Playlist.delete_all
 # 											artist: artists.sample,
 # 											duration: (120..360).to_a.sample)
 # end
+songFinder = Echonest::Song.new(Rails.application.secrets.API_KEY_ECHONEST)
+# p songFinder.search({combined: 'Weezer'})
 CSV.foreach("karaoke Library.csv") do |row|
   song = Song.create!(title: row[1],
   										artist: row[0],
   										duration: (120..360).to_a.sample)
+  p 'SONG INFO'
+  p '========='
+  p songFinder.search({combined: row[0] + ' ' + row[1]}) if $. < 5
 end
 
 
