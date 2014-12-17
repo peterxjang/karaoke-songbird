@@ -1,22 +1,10 @@
 <ul data-role="listview" data-inset="true" data-theme="b">
-	<li data-role="list-divider" data-theme="b">Now playing:</li>
-
-		<li><a href="#">
-			<%= @now_playing.user.name %> is singing
-			<ul data-role="listview" data-inset="true">
-				<li><%= @now_playing.song.title %> by <%= @now_playing.song.artist %> (<%= @now_playing.song.time %>)</li>
-			</ul>
-		</a></li>
-
+	<li data-role="list-divider" data-theme="b">Right now:</li>
+  <%= render :partial => "song_info", :locals => {:song_data => @now_playing} %>
 </ul>
 <ul data-role="listview" data-inset="true" data-theme="a">
 	<li data-role="list-divider" data-theme="a">Coming up:</li>
 	<% @user_songs.each do |user_song| %>
-		<li><a href="#">
-			<%= user_song.user.name %> is singing
-			<ul data-role="listview" data-inset="true">
-				<li><%= user_song.song.title %> by <%= user_song.song.artist %> (<%= user_song.song.time %>)</li>
-			</ul>
-		</a></li>
+    <%= render :partial => "song_info", :locals => {:song_data => user_song} %>
 	<% end %>
 </ul>

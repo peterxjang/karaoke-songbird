@@ -1,0 +1,17 @@
+<li>
+	<%= song_data.user.name %> is singing
+	<ul data-role="listview" data-inset="true">
+		<li>
+			<a href="#popupSong<%= song_data.id %>" data-rel="popup" data-transition="pop" data-position-to="window">
+        <%= song_data.song.title %> by <%= song_data.song.artist %> (<%= song_data.song.time %>)
+      </a>
+			<div data-role="popup" data-overlay-theme="b" data-theme="a" class="ui-content" class="popupSong" id="popupSong<%= song_data.id %>">
+	      <ul data-role="listview" data-inset="true" >
+          <li>Title: <%= song_data.song.title %></li>
+          <li>Artist: <%= song_data.song.artist %></li>
+          <li><a class="song-preview" href="<%= spotify_search_url(song_data.song.title, song_data.song.artist) %>">Preview</a></li>
+        </ul>
+      </div>
+		</li>
+	</ul>
+</li>
