@@ -1,7 +1,7 @@
 class PlaylistsController < ApplicationController
 
 	def show
-		@user_songs = current_playlist.user_songs.limit(5)
+		@user_songs = current_playlist.user_songs
 		@now_playing = @user_songs[0]
 		@user_songs = @user_songs[1..-1]
 	end
