@@ -4,6 +4,7 @@ $(document).ready(function() {
 		var that = this;
 		// var audioObject;
 		if ($(this).html() === "Preview") {
+			$(this).html("Loading...");
 			$.ajax({
 				url: $(this).attr('href'),
 				success: function(response) {
@@ -27,7 +28,7 @@ $(document).ready(function() {
 	});
 
 	$(document).on("popupafterclose", '.ui-popup', function(event, ui) {
-		if (audioObject) {
+		if (typeof audioObject !== 'undefined') {
 			audioObject.pause();
 			$(this).find('.song-preview').html("Preview");
 		}

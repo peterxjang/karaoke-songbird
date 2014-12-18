@@ -1,17 +1,21 @@
 <li>
-	<%= song_data.user.name %> is singing
-	<ul data-role="listview" data-inset="true">
-		<li>
-			<a href="#popupSong<%= song_data.id %>" data-rel="popup" data-transition="pop" data-position-to="window">
-        <%= song_data.song.title %> by <%= song_data.song.artist %> (<%= song_data.song.time %>)
-      </a>
-			<div data-role="popup" data-overlay-theme="b" data-theme="a" class="ui-content" class="popupSong" id="popupSong<%= song_data.id %>">
-	      <ul data-role="listview" data-inset="true" >
-          <li>Title: <%= song_data.song.title %></li>
-          <li>Artist: <%= song_data.song.artist %></li>
-          <li><a class="song-preview" href="<%= spotify_search_url(song_data.song.title, song_data.song.artist) %>">Preview</a></li>
-        </ul>
-      </div>
-		</li>
-	</ul>
+	<a href="#popupSong<%= song_data.id %>" data-rel="popup" data-transition="pop" data-position-to="window">
+    <div class="text-align-left">
+      <h2><%= song_data.user.name %></h2>
+      <p><strong><%= song_data.song.title %></strong> <em>by <%= song_data.song.artist %></em></p>
+    </div>
+    <div class="text-align-right">
+      <h3><%= song_data.song.time %></h3>
+    </div>
+  </a>
+	<div data-role="popup" data-overlay-theme="b" data-theme="a" class="ui-content" class="popupSong" id="popupSong<%= song_data.id %>">
+    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+    <ul data-role="listview" data-inset="true" >
+      <li data-role="list-divider" data-theme="a">Song info</li>
+      <li>Singer: <strong><%= song_data.user.name %></strong></li>
+      <li>Title: <strong><%= song_data.song.title %></strong></li>
+      <li>Artist: <strong><%= song_data.song.artist %></strong></li>
+      <li><a class="song-preview" href="<%= spotify_search_url(song_data.song.title, song_data.song.artist) %>">Preview</a></li>
+    </ul>
+  </div>
 </li>
