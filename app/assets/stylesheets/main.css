@@ -35,3 +35,10 @@ body{
 	/*padding: 2% !important;*/
 	/*text-align: center !important;*/
 }
+
+.center-wrapper{
+  text-align: center;
+}
+.center-wrapper * {
+  margin: 0 auto;
+}

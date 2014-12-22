@@ -25,26 +25,13 @@
 		<h4>Footer</h4>
 	</div>
 
-	<div id="main-menu" data-role="panel" data-display="overlay" data-theme="b">
-	  <ul data-role="listview">
-		  <li><input type="search" name="search-1" id="search-1" value="" data-theme="a"></li>
-	    <li><a href="#">Sing</a></li>
-	    <li><a href="#">Songs by Title</a></li>
-	    <li><a href="#">Songs by Artist</a></li>
-	    <li><a href="#">Songs by Genre</a></li>
-	    <li><a href="#">Rate Performers</a></li>
-	    <li><a href="#">My Profile</a></li>
-	    <li><a href="#">Settings</a></li>
-	    <li><a href="#">Help</a></li>
-	  </ul>
-	</div>
+	<%= render :partial => 'layouts/panel_main' %>
 
-	<div id="search-menu" data-role="panel" data-display="overlay" data-position="right" data-theme="b">
-		<form class="ui-filterable">
-			<input id="autocomplete-input" data-type="search" data-theme="a" placeholder="Find a song...">
-		</form>
-		<ul id="autocomplete" data-role="listview" data-inset="true" data-filter="true" data-input="#autocomplete-input"></ul>
-	</div>
+	<%= render :partial => 'layouts/panel_search' %>
+
+	<%= render :partial => 'sessions/popup_signin' %>
+
+	<%= render :partial => 'users/popup_signup' %>
 
 </div>
 

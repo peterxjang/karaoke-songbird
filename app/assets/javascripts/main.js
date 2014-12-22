@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+  $('#popup-signin').on("popupafterclose", function(){ $('#popup-signup').popup("open") }).popup("close");
+  // $( '#popup-signin' ).on({
+  //   popupafterclose: function() {
+  //     setTimeout( function(){ $( '#popup-signup' ).popup( 'open' ) }, 100 );
+  //   }
+  // });
+
 	$(document).on('click', '#header-menu', function(e) {
 		e.preventDefault();
 	});
