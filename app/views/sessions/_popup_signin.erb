@@ -1,6 +1,7 @@
 <div data-role="popup" data-overlay-theme="b" data-theme="a" class="ui-content" id="popup-signin">
   <!-- <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a> -->
-	<%= form_tag login_path, role: "form" do %>
+	<%= form_tag login_path, id: "form-signin", role: "form" do %>
+	<div class="center-wrapper"><p id="error-signin"></p></div>
 	<ul data-role="listview" data-inset="true" >
 		<li><%= label_tag :email, "Email" %><%= email_field_tag :email %></li>
 		<li><%= label_tag :password, "Password" %><%= password_field_tag :password %></li>
@@ -8,6 +9,6 @@
 	<%= submit_tag "Log in" %>
 	<% end %>
 	<div class="center-wrapper">
-	<%= link_to "Or create an account", "#popup-signup" %>
+	<%= link_to "Or create an account", "#popup-signup", id: 'link-signup' %>
 	</div>
 </div>

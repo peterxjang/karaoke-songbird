@@ -39,6 +39,11 @@ body{
 .center-wrapper{
   text-align: center;
 }
+
 .center-wrapper * {
   margin: 0 auto;
+}
+
+#error-signin {
+	color: red;
 }
