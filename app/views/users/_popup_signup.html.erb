@@ -1,10 +1,13 @@
 <div data-role="popup" data-overlay-theme="b" data-theme="a" class="ui-content" id="popup-signup">
   <!-- <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a> -->
-		<%= form_tag login_path, role: "form" do %>
-		<ul data-role="listview" data-inset="true" >
-			<li><%= label_tag :email, "Email" %><%= email_field_tag :email %></li>
-			<li><%= label_tag :password, "Password" %><%= password_field_tag :password %></li>
-		</ul>
-		<%= submit_tag "Create account" %>
-		<% end %>
+	<%= form_tag login_path, id: "form-signup", role: "form" do %>
+	<div class="center-wrapper"><p id="error-signup"></p></div>
+	<ul data-role="listview" data-inset="true" >
+		<li><%= label_tag :first_name, "First name" %><%= text_field_tag :first_name %></li>
+		<li><%= label_tag :last_name, "Last name" %><%= text_field_tag :last_name %></li>
+		<li><%= label_tag :email, "Email" %><%= email_field_tag :email %></li>
+		<li><%= label_tag :password, "Password" %><%= password_field_tag :password %></li>
+	</ul>
+	<%= submit_tag "Create account" %>
+	<% end %>
 </div>

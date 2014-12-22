@@ -44,6 +44,6 @@ body{
   margin: 0 auto;
 }
 
-#error-signin {
+#error-signin, #error-signup {
 	color: red;
 }

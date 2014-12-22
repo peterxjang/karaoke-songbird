@@ -14,20 +14,15 @@ class SessionsController < ApplicationController
 				session[:user_id] = @user.id
 			end
 		end
-		if @user
-			# redirect_to :categories
+		if current_user
 			render json: {valid: true}
 		else
-			# @message_signin = "Incorrect email or password!"
-			# @user = User.new
-			# render "new"
 			render json: {valid: false}
 		end
 	end
 
 	def destroy
 		session[:user_id] = nil
-		# redirect_to '/'
 		render json: {valid: true}
 	end
 end
