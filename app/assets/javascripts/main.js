@@ -8,6 +8,12 @@ $(document).ready(function() {
 		e.preventDefault();
 	});
 
+  $(".ui-popup").bind({
+    popupafterclose: function(event, ui) { 
+      $('.ui-popup input').val('');
+    }
+  });
+
   $( "#autocomplete" ).on( "filterablebeforefilter", function ( e, data ) {
     var $ul = $( this ),
       $input = $( data.input ),
