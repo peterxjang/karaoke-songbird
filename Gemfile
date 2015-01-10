@@ -41,9 +41,14 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'faker'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'jasmine'
   gem 'rubocop', require: false
+end
+
+group :production, :staging do
+  gem 'rails_12factor'
 end
