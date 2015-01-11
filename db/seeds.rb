@@ -2,7 +2,7 @@ require 'csv'
 
 User.delete_all
 Song.delete_all
-UserSong.delete_all
+Performance.delete_all
 Playlist.delete_all
 
 # Create songs
@@ -38,7 +38,7 @@ end
 5.times do 
 	playlist = Playlist.create!
 	20.times do 
-		UserSong.create!(user: User.all.sample, 
+		Performance.create!(user: User.all.sample, 
 										 song: Song.all.sample,
 										 playlist: playlist)
 	end

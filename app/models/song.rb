@@ -1,6 +1,6 @@
 class Song < ActiveRecord::Base
-	has_many :user_songs
-	has_many :users, through: :user_songs
+	has_many :performances
+	has_many :users, through: :performances
 
 	def time
 		minutes = self.duration / 60

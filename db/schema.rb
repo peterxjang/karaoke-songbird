@@ -16,6 +16,14 @@ ActiveRecord::Schema.define(version: 20141126235452) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "performances", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "song_id"
+    t.integer  "playlist_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "playlists", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -25,14 +33,6 @@ ActiveRecord::Schema.define(version: 20141126235452) do
     t.string   "title"
     t.string   "artist"
     t.integer  "duration"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "user_songs", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "song_id"
-    t.integer  "playlist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
