@@ -1,0 +1,24 @@
+<div class="grid-66-33">
+	<div class="block-66">
+		<%= form_for @performance, url: {action: :create, controller: :performances}, html: {class: "signup"} do |f| %>
+
+			<%= f.text_field :user, placeholder: "Name" %>
+			<%= f.text_field :song, placeholder: "Song" %>
+		<% end %>
+		<ul data-role="listview" data-inset="true" data-theme="b">
+			<li data-role="list-divider" data-theme="b">Right now:</li>
+		  <%= render :partial => "song_info", :locals => {:song_data => @now_playing} %>
+		</ul>
+		<ul class="admin-sortable" data-role="listview" data-inset="true" data-theme="a">
+			<li data-role="list-divider" data-theme="a">Coming up:</li>
+			<% @performances.each do |performance| %>
+		    <%= render :partial => "song_info", :locals => {:song_data => performance} %>
+			<% end %>
+		</ul>
+	</div>
+	<div class="block-33">
+		<div class="chat">
+		hello
+		</div>
+	</div>
+</div>
