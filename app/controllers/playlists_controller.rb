@@ -1,5 +1,5 @@
 class PlaylistsController < ApplicationController
-	before_action: :authorize_if_admin, except: :show
+	# before_action: :authorize_if_admin, except: :show
 
 	def index
 		@user_songs = current_playlist.user_songs.limit(5)
@@ -19,7 +19,7 @@ class PlaylistsController < ApplicationController
 		if @playlist.save
 			respond_to do |format|
 				format.html { redirect_to(playlist_url(@playlist))}
-				format.js { render {"TODO" => "Implement"}.to_json }
+				# format.js { render {:"TODO" => :Implement }.to_json }
 			end
 		else
 			render :new
@@ -27,9 +27,11 @@ class PlaylistsController < ApplicationController
 	end
 
 	def edit
+		@playlist = Playlist.find(params[:id])
 	end
 
 	def delete
+		@playlist = Playlist.find(params[:id])
 	end
 
 	def destroy

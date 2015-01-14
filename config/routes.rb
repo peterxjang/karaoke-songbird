@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tests
+
   # root to: "sessions#new"
   root to: "playlists#index"
   post '/login', to: "sessions#create"
