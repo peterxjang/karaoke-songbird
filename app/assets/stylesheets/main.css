@@ -12,13 +12,38 @@ input, textarea, select { font-size: 110%; line-height: 1.1; }
 abbr, acronym { border-bottom: .1em dotted; cursor: help; }
 
 body{
-  padding: 0;
+  padding: 0 ;
   margin: 0;
   border: 0;
-  overflow: hidden;
+  /*overflow: hidden;*/
+}
+
+/*h2 {
+	font-size: 1.5em !important;
+}*/
+
+.text-align-left {
+	float: left;
+}
+
+.text-align-right {
+	float: right;
 }
 
 .ui-li-divider {
-	font-size: 2em !important;
-	text-align: center !important;
+	/*font-size: 1.5em !important;*/
+	/*padding: 2% !important;*/
+	/*text-align: center !important;*/
+}
+
+.center-wrapper{
+  text-align: center;
+}
+
+.center-wrapper * {
+  margin: 0 auto;
+}
+
+#error-signin, #error-signup {
+	color: red;
 }

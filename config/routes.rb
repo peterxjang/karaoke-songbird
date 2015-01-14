@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   resources :tests
 
   # root to: "sessions#new"
-  root to: "playlists#index"
+  root to: "playlists#show"
   post '/login', to: "sessions#create"
   get '/logout', to: "sessions#destroy"
-  
+  get '/admin', to: "playlists#admin"
+
   resources :users, except: [:destroy]
 
-  resources :playlists
+  get '/playlists', to: "playlists#index"
+  resources :performances
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

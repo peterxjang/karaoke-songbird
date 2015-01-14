@@ -12,4 +12,12 @@ module ApplicationHelper
 			current_user.admin
 		end
 	end
+
+	def spotify_search_url(track, artist)
+		track = track.gsub(/\(([^)]+)\)/, '')
+		"https://api.spotify.com/v1/search?" + 
+		"query=artist:#{artist.gsub(' ', '%20')}+track:#{track.gsub(' ', '%20')}&" +
+		"limit=1&" +
+		"type=track"
+	end
 end

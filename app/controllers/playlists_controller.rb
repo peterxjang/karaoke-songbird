@@ -1,4 +1,5 @@
 class PlaylistsController < ApplicationController
+<<<<<<< HEAD
 	# before_action: :authorize_if_admin, except: :show
 
 	def index
@@ -38,11 +39,33 @@ class PlaylistsController < ApplicationController
 	end
 
 	def update
+=======
+
+	def show
+		perfs = current_playlist.performances
+		@now_playing = perfs[0]
+		@performances = perfs[1..-1]
+	end
+
+	def update 
+		redirect_to current_playlist
+	end
+
+	def admin
+		perfs = current_playlist.performances
+		@now_playing = perfs[0]
+		@performances = perfs[1..-1]
+		@performance = Performance.new
+>>>>>>> cfd17aff85da5b0c1597209c52b76e031de2f039
 	end
 
 	private
 
+<<<<<<< HEAD
 	def authorize_if_admin
 		redirect root_url unless admin?
 	end
 end
+=======
+end
+>>>>>>> cfd17aff85da5b0c1597209c52b76e031de2f039
