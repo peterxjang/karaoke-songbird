@@ -1,18 +1,20 @@
 .grid-66-33 {
-	float: left;
 	width: 100%;
-	display: inline;
+	display: inline-block;
 }
 
 .block-66 {
+	float: left;
 	width: 66%;
 }
 
 .block-33 {
-	width: 33%;
+	padding: 1%;
+	float: left;
+	width: 31%;
 }
 
 .chat {
+	min-height: 720px;
 	border: 1px solid black;
-	background-color: red;
 }

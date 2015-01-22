@@ -15,3 +15,11 @@
     <li><a href="#" id="link-signout" style="display:none">Log out</a></li>
   </ul>
 </div>
+<% unless current_user.nil? %>
+    <script>
+        $(document).ready(function() {
+            console.log("hello from script tag");
+            toggleLoginLogout(); // reloading the page reverts the login/logout
+        });
+    </script>
+<% end %>
