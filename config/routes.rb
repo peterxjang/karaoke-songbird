@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   get '/logout', to: "sessions#destroy"
   get '/admin', to: "playlists#admin"
+  post '/update', to: "playlists#update"
 
   resources :users, except: [:destroy]
 
   get '/playlists', to: "playlists#index"
-  resources :performances
+  resources :performances # not sure we need these (move this to playlist update instead?)
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

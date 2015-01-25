@@ -9,7 +9,7 @@ $(document).ready(function() {
 	});
 
   $(".ui-popup").bind({
-    popupafterclose: function(event, ui) { 
+    popupafterclose: function(event, ui) {
       $('.ui-popup input').val('');
     }
   });
@@ -42,5 +42,13 @@ $(document).ready(function() {
       });
     }
   });
+
+	$(document).on('click', '#autocomplete a', function (e) {
+		e.preventDefault();
+		// bring up a popup about song
+		// if user selects to sing
+		var $data = $(this).text();
+		$.post('/update', {"new_performance":{"song_id":$data}});
+	});
 
 });
