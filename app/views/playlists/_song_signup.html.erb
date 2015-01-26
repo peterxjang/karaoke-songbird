@@ -1,0 +1,10 @@
+<%= form_tag update_path, id: "form-song-signup", data: @song.id,  "data-ajax": "false", role: "form" do %>
+  <!-- <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a> -->
+  <ul data-role="listview" data-inset="true" >
+    <li data-role="list-divider" data-theme="a">Song info</li>
+    <li>Title: <strong><%= @song.title %></strong></li>
+    <li>Artist: <strong><%= @song.artist %></strong></li>
+    <li><a class="song-preview" href="<%= spotify_search_url(@song.title, @song.artist) %>">Preview</a></li>
+  </ul>
+<%= submit_tag "Sing this song" %>
+<% end %>

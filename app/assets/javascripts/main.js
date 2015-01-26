@@ -21,21 +21,17 @@ $(document).ready(function() {
       html = "";
     $ul.html( "" );
     if ( value && value.length > 2 ) {
-    	console.log(value);
       $ul.html( "<li><div class='ui-loader'><span class='ui-icon ui-icon-loading'></span></div></li>" );
       $ul.listview( "refresh" );
       $.ajax({
-        url: "http://gd.geobytes.com/AutoCompleteCity",
-        dataType: "jsonp",
-        crossDomain: true,
+        url: '/search',
+        type: 'GET',
         data: {
-          q: $input.val()
+          query: $input.val()
         }
       })
       .then( function ( response ) {
-        $.each( response, function ( i, val ) {
-          html += "<li><a href='#'>" + val + "</a></li>";
-        });
+        html = response.html;
         $ul.html( html );
         $ul.listview( "refresh" );
         $ul.trigger( "updatelayout");
@@ -45,10 +41,38 @@ $(document).ready(function() {
 
 	$(document).on('click', '#autocomplete a', function (e) {
 		e.preventDefault();
-		// bring up a popup about song
-		// if user selects to sing
-		var $data = $(this).text();
-		$.post('/update', {"new_performance":{"song_id":$data}});
+    $.ajax({
+      url: '/song_signup',
+      type: 'GET',
+      data: {id: $(this).attr('href')},
+    })
+    .then( function (response) {
+      if (response.valid) {
+        $('#popupSongSignup').html(response.html);
+        $('#popupSongSignup').trigger("create");
+        $('#popupSongSignup').popup('open');
+      }
+      else {
+        $('#popup-signin').popup("open");
+      }
+    });
 	});
+
+  $(document).on('submit', 'form#form-song-signup', function(e) {
+    e.preventDefault();
+    $.ajax({
+      url: '/update',
+      type: 'POST',
+      dataType: 'json',
+      data: {"new_performance": {"song_id": $("form#form-song-signup").attr('data')}},
+      success: function(response) {
+        if (response.valid) {
+          $('#popupSongSignup').popup("close");
+          $('#search-menu').panel("close");
+        }
+      },
+      error: function(response) { console.log("Song signup error!"); console.log(response); }
+    });
+  });
 
 });

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/logout', to: "sessions#destroy"
   get '/admin', to: "playlists#admin"
   post '/update', to: "playlists#update"
+  get '/search', to: "playlists#search"
+  get '/song_signup', to: "playlists#song_signup"
 
   resources :users, except: [:destroy]
 

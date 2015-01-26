@@ -1,0 +1,5 @@
+<% @results.each do |song| %>
+  <li>
+    <a href="<%= song.id %>"><%= song.title %><br><p><i><%= song.artist %></i></p></a>
+  </li>
+<% end %>
