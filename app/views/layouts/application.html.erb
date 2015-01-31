@@ -14,7 +14,7 @@
 	<div data-role="header" data-theme="b">
 		<a href="#main-menu" id="header-menu" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-grid">Menu</a>
 		<h1>Karaoke Songbird</h1>
-		<a href="#search-menu" id="header-search" class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-search">Search</a>
+		<a href="#search-menu" id="header-search" class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-search">Sing a song</a>
 	</div>
 
 	<div data-role="content" data-theme="a">
@@ -31,7 +31,9 @@
 
 	<%= render :partial => 'sessions/popup_signin' %>
 
-	<%= render :partial => 'users/popup_signup' %>
+  <%= render :partial => 'users/popup_signup' %>
+
+  <div data-role="popup" data-overlay-theme="b" data-theme="a" class="ui-content" id="popupSongSignup"></div>
 
 </div>
 

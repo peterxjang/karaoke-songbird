@@ -42,6 +42,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'faker'
 
+gem "eventmachine"
+gem "em-websocket"
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
