@@ -90,7 +90,7 @@ GEM
     pg (0.17.1-x86-mingw32)
     phantomjs (1.9.7.1)
     powerpack (0.0.9)
-    rack (1.5.2)
+    rack (1.5.5)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.6)
